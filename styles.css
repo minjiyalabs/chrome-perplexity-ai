@@ -1,74 +1,196 @@
 .perplexity-results {
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #dfe1e5;
-    padding: 16px;
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    margin: 0 0 24px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    background-color: #ffffff;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+.perplexity-results:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: #d1d5db;
 }
 
 .perplexity-header {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .perplexity-logo {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    border-radius: 8px;
 }
 
 .perplexity-header span {
     font-size: 16px;
-    font-weight: 500;
-    color: #202124;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.025em;
 }
 
 .perplexity-content {
-    font-size: 14px;
-    line-height: 1.58;
-    color: #4d5156;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #374151;
 }
 
 .perplexity-loading {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    color: #5f6368;
+    padding: 32px;
+    color: #6b7280;
+    font-size: 15px;
+    position: relative;
+}
+
+.perplexity-loading::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    border: 3px solid #e5e7eb;
+    border-top-color: #6b7280;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
 }
 
 .perplexity-error {
-    color: #ea4335;
-    padding: 12px;
+    color: #ef4444;
+    padding: 16px;
     text-align: center;
+    background: #fef2f2;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.perplexity-error a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: #ef4444;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.perplexity-error a:hover {
+    background: #dc2626;
 }
 
 .perplexity-sources {
-    margin-top: 16px;
-    padding-top: 12px;
-    border-top: 1px solid #dfe1e5;
-    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
 }
 
 .perplexity-sources h4 {
-    margin: 0 0 8px 0;
-    font-size: 13px;
-    font-weight: 500;
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.025em;
 }
 
 .perplexity-sources ul {
     margin: 0;
-    padding-left: 20px;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .perplexity-sources a {
-    color: #1a73e8;
+    color: #2563eb;
     text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
 }
 
 .perplexity-sources a:hover {
+    color: #1d4ed8;
     text-decoration: underline;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Prose styles for the answer content */
+.perplexity-answer {
+    color: #374151;
+}
+
+.perplexity-answer p {
+    margin: 0 0 16px;
+    line-height: 1.6;
+}
+
+.perplexity-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.perplexity-answer a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.perplexity-answer a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.perplexity-answer code {
+    background: #f3f4f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        monospace;
+}
+
+.perplexity-answer pre {
+    background: #f3f4f6;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+.perplexity-answer ul,
+.perplexity-answer ol {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+.perplexity-answer li {
+    margin: 8px 0;
 }

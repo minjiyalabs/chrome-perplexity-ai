@@ -34,6 +34,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                         },
                         (results) => {
                             if (results && results[0] && results[0].result) {
+                                // Save login status if detected
+                                if (results[0].result.isLoggedIn === true) {
+                                    chrome.storage.local.set({
+                                        perplexityLoginStatus: "loggedIn",
+                                        lastCheck: new Date().toISOString(),
+                                    });
+                                }
+
                                 // We have results, send them back to Google tab
                                 chrome.tabs.sendMessage(sender.tab.id, {
                                     action: "displayPerplexityResults",
@@ -52,8 +60,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                     );
                 }
 
-                // Start checking after a brief delay to let the page load
-                setTimeout(checkPerplexityTab, 3000);
+                // Start checking after a longer delay to let the page load
+                setTimeout(checkPerplexityTab, 5000);
             }
         );
 
@@ -61,21 +69,70 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         sendResponse({ status: "processing" });
         return true;
     }
+
+    // Add a new message handler for explicit login checks
+    if (request.action === "checkPerplexityLogin") {
+        chrome.scripting.executeScript(
+            {
+                target: { tabId: request.tabId },
+                function: checkLoginStatus,
+            },
+            (results) => {
+                if (results && results[0] && results[0].result) {
+                    chrome.storage.local.set({
+                        perplexityLoginStatus: results[0].result.isLoggedIn
+                            ? "loggedIn"
+                            : "notLoggedIn",
+                        lastCheck: new Date().toISOString(),
+                    });
+                }
+            }
+        );
+        return true;
+    }
 });
+
+// Function to just check login status
+function checkLoginStatus() {
+    // Try multiple selectors that might indicate login status
+    const userMenuPresent =
+        document.querySelector('[aria-label="User menu"]') !== null;
+    const userAvatarPresent =
+        document.querySelector('[alt="User Avatar"]') !== null;
+    const signInButtonAbsent =
+        document.querySelector('[aria-label="Sign In"]') === null;
+
+    // Consider logged in if any positive indicators are found
+    const isLoggedIn =
+        userMenuPresent || userAvatarPresent || signInButtonAbsent;
+
+    return { isLoggedIn: isLoggedIn };
+}
 
 // Function to extract content from Perplexity page
 function getPerplexityContent() {
     // This function runs in the context of the Perplexity tab
 
-    // Check if we're logged in
-    const isLoggedIn =
+    // Check if we're logged in using multiple possible indicators
+    const userMenuPresent =
         document.querySelector('[aria-label="User menu"]') !== null;
+    const userAvatarPresent =
+        document.querySelector('[alt="User Avatar"]') !== null;
+    const signInButtonAbsent =
+        document.querySelector('[aria-label="Sign In"]') === null;
+
+    // Consider logged in if any positive indicators are found
+    const isLoggedIn =
+        userMenuPresent || userAvatarPresent || signInButtonAbsent;
 
     // Check if the results are loaded
     const mainAnswer = document.querySelector(".prose");
 
     if (!isLoggedIn) {
-        return { error: "Not logged in to Perplexity" };
+        return {
+            error: "Not logged in to Perplexity",
+            isLoggedIn: false,
+        };
     }
 
     if (!mainAnswer) {
@@ -104,5 +161,6 @@ function getPerplexityContent() {
         answerHtml: answerText,
         sources: sources,
         timestamp: new Date().toISOString(),
+        isLoggedIn: true,
     };
 }

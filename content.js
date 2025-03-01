@@ -34,7 +34,7 @@ function insertPlaceholder() {
         <img src="${chrome.runtime.getURL(
             "images/perplexity-logo.png"
         )}" alt="Perplexity AI" class="perplexity-logo">
-        <span>Perplexity AI</span>
+        <span>Perplexity AI results</span>
       </div>
       <div class="perplexity-content">
         <div class="perplexity-loading">Loading results from Perplexity...</div>
