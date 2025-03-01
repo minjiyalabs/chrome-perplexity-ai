@@ -139,8 +139,69 @@ function getPerplexityContent() {
         return null; // Results not ready yet
     }
 
-    // Extract the main answer
-    const answerText = mainAnswer.innerHTML;
+    // Function to convert Tailwind classes to our custom styling
+    function convertTailwindContent(element) {
+        // Clone the element to avoid modifying the original
+        const clonedElement = element.cloneNode(true);
+
+        // Remove Tailwind classes but preserve essential ones
+        const elementsToProcess = clonedElement.querySelectorAll("*");
+        elementsToProcess.forEach((el) => {
+            // Convert specific Tailwind classes to our custom classes
+            if (el.classList.contains("prose")) {
+                el.classList.remove("prose");
+                el.classList.add("perplexity-prose");
+            }
+
+            // Handle links
+            if (el.tagName === "A") {
+                el.classList.add("perplexity-link");
+            }
+
+            // Handle code blocks
+            if (el.tagName === "PRE") {
+                el.classList.add("perplexity-code-block");
+                // Find code element inside pre
+                const code = el.querySelector("code");
+                if (code) {
+                    code.classList.add("perplexity-code");
+                }
+            }
+
+            // Handle inline code
+            if (el.tagName === "CODE" && el.parentElement.tagName !== "PRE") {
+                el.classList.add("perplexity-inline-code");
+            }
+
+            // Handle lists
+            if (el.tagName === "UL") {
+                el.classList.add("perplexity-list");
+            }
+            if (el.tagName === "OL") {
+                el.classList.add("perplexity-ordered-list");
+            }
+            if (el.tagName === "LI") {
+                el.classList.add("perplexity-list-item");
+            }
+
+            // Remove all Tailwind classes
+            const classList = Array.from(el.classList);
+            classList.forEach((className) => {
+                if (
+                    className.match(
+                        /^(text-|bg-|p-|m-|flex|grid|border|rounded)/
+                    )
+                ) {
+                    el.classList.remove(className);
+                }
+            });
+        });
+
+        return clonedElement;
+    }
+
+    // Convert the main answer content
+    const convertedAnswer = convertTailwindContent(mainAnswer);
 
     // Extract sources if available
     const sources = Array.from(
@@ -158,7 +219,7 @@ function getPerplexityContent() {
         .filter(Boolean);
 
     return {
-        answerHtml: answerText,
+        answerHtml: convertedAnswer.innerHTML,
         sources: sources,
         timestamp: new Date().toISOString(),
         isLoggedIn: true,

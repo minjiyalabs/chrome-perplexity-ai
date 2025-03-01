@@ -2,152 +2,41 @@
 <html>
     <head>
         <title>Perplexity Google Integration</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
         <style>
             body {
-                width: 320px;
-                font-family: "Inter", sans-serif;
-                padding: 16px;
-                margin: 0;
-                background: #ffffff;
-                color: #111827;
+                width: 300px;
+                font-family: Arial, sans-serif;
+                padding: 12px;
             }
-
-            .container {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-            }
-
-            .header {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                padding-bottom: 12px;
-                border-bottom: 1px solid #e5e7eb;
-            }
-
-            .header img {
-                width: 28px;
-                height: 28px;
-            }
-
             h2 {
                 font-size: 16px;
-                font-weight: 600;
-                margin: 0;
-                color: #111827;
+                margin-top: 0;
             }
-
-            .status-card {
-                background: #f9fafb;
-                border: 1px solid #e5e7eb;
-                border-radius: 12px;
-                padding: 12px 16px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                transition: all 0.2s ease;
-            }
-
-            .status-card:hover {
-                border-color: #d1d5db;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            }
-
-            .status-indicator {
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: #10b981;
-                animation: pulse 2s infinite;
-            }
-
-            .status-text {
+            .status {
+                margin-top: 10px;
+                padding: 8px;
+                border-radius: 4px;
+                background-color: #e8f0fe;
                 font-size: 14px;
-                color: #374151;
             }
-
             button {
-                background: #111827;
+                margin-top: 12px;
+                padding: 6px 12px;
+                background-color: #1a73e8;
                 color: white;
                 border: none;
-                border-radius: 12px;
-                padding: 12px 20px;
-                font-family: "Inter", sans-serif;
-                font-size: 14px;
-                font-weight: 500;
+                border-radius: 4px;
                 cursor: pointer;
-                transition: all 0.2s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
             }
-
             button:hover {
-                background: #1f2937;
-                transform: translateY(-1px);
-            }
-
-            button:active {
-                transform: translateY(0);
-            }
-
-            @keyframes pulse {
-                0% {
-                    transform: scale(1);
-                    opacity: 1;
-                }
-                50% {
-                    transform: scale(1.2);
-                    opacity: 0.7;
-                }
-                100% {
-                    transform: scale(1);
-                    opacity: 1;
-                }
+                background-color: #1765cc;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="header">
-                <img src="images/perplexity-logo.png" alt="Perplexity AI" />
-                <h2>Perplexity Integration</h2>
-            </div>
-
-            <div class="status-card">
-                <div class="status-indicator"></div>
-                <span class="status-text"
-                    >Status: <span id="status">Active</span></span
-                >
-            </div>
-
-            <button id="check-login">
-                <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                </svg>
-                Check Perplexity Login
-            </button>
-        </div>
+        <h2>Perplexity Google Integration</h2>
+        <div class="status">Status: <span id="status">Active</span></div>
+        <button id="check-login">Check Perplexity Login</button>
         <script src="popup.js"></script>
     </body>
 </html>

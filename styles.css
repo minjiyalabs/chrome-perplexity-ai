@@ -1,196 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap");
+
+:root {
+    --perplexity-bg: #0c0c0c;
+    --perplexity-card: #161616;
+    --perplexity-text: #e6e6e6;
+    --perplexity-secondary: #a3a3a3;
+    --perplexity-accent: #00ccbb;
+    --perplexity-border: rgba(255, 255, 255, 0.1);
+    --perplexity-hover: #252525;
+}
+
 .perplexity-results {
-    margin: 0 0 24px;
+    margin: 24px 0;
     border-radius: 16px;
-    border: 1px solid #e5e7eb;
-    padding: 20px;
-    background-color: #ffffff;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: all 0.2s ease;
-    animation: slideIn 0.3s ease-out;
-}
-
-.perplexity-results:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    border-color: #d1d5db;
-}
-
-.perplexity-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.perplexity-logo {
-    width: 28px;
-    height: 28px;
-    margin-right: 12px;
-    border-radius: 8px;
-}
-
-.perplexity-header span {
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
-    letter-spacing: -0.025em;
-}
-
-.perplexity-content {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #374151;
-}
-
-.perplexity-loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 32px;
-    color: #6b7280;
-    font-size: 15px;
-    position: relative;
-}
-
-.perplexity-loading::after {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    margin-left: 12px;
-    border: 3px solid #e5e7eb;
-    border-top-color: #6b7280;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-
-.perplexity-error {
-    color: #ef4444;
-    padding: 16px;
-    text-align: center;
-    background: #fef2f2;
-    border-radius: 12px;
-    font-weight: 500;
-}
-
-.perplexity-error a {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 16px;
-    background: #ef4444;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
-}
-
-.perplexity-error a:hover {
-    background: #dc2626;
-}
-
-.perplexity-sources {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid #e5e7eb;
-}
-
-.perplexity-sources h4 {
-    margin: 0 0 12px 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #111827;
-    letter-spacing: -0.025em;
-}
-
-.perplexity-sources ul {
-    margin: 0;
-    padding-left: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.perplexity-sources a {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s ease;
-}
-
-.perplexity-sources a:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
+    border: 1px solid var(--perplexity-border);
+    padding: 24px;
+    background-color: var(--perplexity-card);
+    font-family: "Google Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideIn 0.5s ease forwards;
+    color: var(--perplexity-text);
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+.perplexity-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--perplexity-border);
 }
 
-/* Prose styles for the answer content */
+.perplexity-logo {
+    width: 24px;
+    height: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+}
+
+.perplexity-logo:hover {
+    transform: scale(1.05);
+}
+
+.perplexity-header span {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--perplexity-text);
+    letter-spacing: -0.02em;
+}
+
+.perplexity-content {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--perplexity-text);
+}
+
 .perplexity-answer {
-    color: #374151;
+    background-color: var(--perplexity-card);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--perplexity-border);
+
+    font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif !important;
 }
 
 .perplexity-answer p {
-    margin: 0 0 16px;
-    line-height: 1.6;
+    margin: 0 0 16px 0;
 }
 
 .perplexity-answer p:last-child {
     margin-bottom: 0;
 }
 
-.perplexity-answer a {
-    color: #2563eb;
+.perplexity-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: var(--perplexity-secondary);
+    font-weight: 500;
+    background: linear-gradient(
+        90deg,
+        var(--perplexity-card) 25%,
+        var(--perplexity-hover) 50%,
+        var(--perplexity-card) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 2s infinite;
+    border-radius: 12px;
+    border: 1px solid var(--perplexity-border);
+}
+
+@keyframes loading {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+
+.perplexity-error {
+    color: #ff6b6b;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.perplexity-error a {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: var(--perplexity-accent);
+    color: #000000;
     text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.perplexity-answer a:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
-}
-
-.perplexity-answer code {
-    background: #f3f4f6;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.9em;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        monospace;
-}
-
-.perplexity-answer pre {
-    background: #f3f4f6;
-    padding: 16px;
     border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.perplexity-error a:hover {
+    background-color: #00e6d2;
+    transform: translateY(-1px);
+}
+
+.perplexity-sources {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--perplexity-border);
+}
+
+.perplexity-sources h4 {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--perplexity-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.perplexity-sources ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.perplexity-sources li {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 200px;
+}
+
+.perplexity-sources a {
+    display: block;
+    padding: 12px 16px;
+    color: var(--perplexity-accent);
+    text-decoration: none;
+    background-color: rgba(0, 204, 187, 0.1);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid var(--perplexity-border);
+}
+
+.perplexity-sources a:hover {
+    background-color: rgba(0, 204, 187, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 204, 187, 0.1);
+}
+
+.perplexity-prose {
+    color: var(--perplexity-text);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.perplexity-prose h1 {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 1.5em 0 0.75em;
+    color: var(--perplexity-text);
+}
+
+.perplexity-prose h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 1.25em 0 0.75em;
+    color: var(--perplexity-text);
+}
+
+.perplexity-prose h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 1em 0 0.5em;
+    color: var(--perplexity-text);
+}
+
+.perplexity-prose p {
+    margin: 1em 0;
+}
+
+.perplexity-link {
+    color: var(--perplexity-accent);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.perplexity-link:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+.perplexity-code-block {
+    background-color: var(--perplexity-hover);
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
     overflow-x: auto;
-    margin: 16px 0;
+    border: 1px solid var(--perplexity-border);
 }
 
-.perplexity-answer ul,
-.perplexity-answer ol {
-    margin: 16px 0;
-    padding-left: 24px;
+.perplexity-code {
+    font-family: "Fira Code", monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
 }
 
-.perplexity-answer li {
-    margin: 8px 0;
+.perplexity-inline-code {
+    font-family: "Fira Code", monospace;
+    font-size: 0.9em;
+    background-color: var(--perplexity-hover);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--perplexity-border);
+}
+
+.perplexity-list,
+.perplexity-ordered-list {
+    margin: 1em 0;
+    padding-left: 1.5em;
+}
+
+.perplexity-list-item {
+    margin: 0.5em 0;
+    position: relative;
+}
+
+.perplexity-list > .perplexity-list-item::before {
+    content: "•";
+    position: absolute;
+    left: -1em;
+    color: var(--perplexity-accent);
+}
+
+/* Add support for syntax highlighting if needed */
+.perplexity-code .keyword {
+    color: #ff7b72;
+}
+.perplexity-code .string {
+    color: #a5d6ff;
+}
+.perplexity-code .comment {
+    color: #8b949e;
+}
+.perplexity-code .function {
+    color: #d2a8ff;
+}
+.perplexity-code .number {
+    color: #79c0ff;
+}
+
+.perplexity-results button {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    vertical-align: baseline;
+    background-color: transparent;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    appearance: none;
+    cursor: pointer;
+    font-family: "Google Sans", -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
