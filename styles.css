@@ -1,0 +1,74 @@
+.perplexity-results {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #dfe1e5;
+    padding: 16px;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.perplexity-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.perplexity-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.perplexity-header span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #202124;
+}
+
+.perplexity-content {
+    font-size: 14px;
+    line-height: 1.58;
+    color: #4d5156;
+}
+
+.perplexity-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #5f6368;
+}
+
+.perplexity-error {
+    color: #ea4335;
+    padding: 12px;
+    text-align: center;
+}
+
+.perplexity-sources {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #dfe1e5;
+    font-size: 12px;
+}
+
+.perplexity-sources h4 {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.perplexity-sources ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.perplexity-sources a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.perplexity-sources a:hover {
+    text-decoration: underline;
+}
