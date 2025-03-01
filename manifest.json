@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Perplexity Google Integration",
-    "version": "1.0",
+    "name": "Perplexity Google Search Integration",
+    "version": "1.1",
     "description": "Displays Perplexity AI results above Google search results",
     "permissions": ["tabs", "scripting", "storage", "webNavigation"],
     "host_permissions": ["https://*.google.com/*", "https://*.perplexity.ai/*"],
