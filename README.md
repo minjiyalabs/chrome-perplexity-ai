@@ -1,46 +1,78 @@
-# Perplexity AI for Google Search
+# 🔍 Perplexity AI for Google Search
 
-**Enhance your Google searches with AI-powered answers from Perplexity, right in your browser.**
+<div align="center">
 
-This Chrome extension seamlessly integrates Perplexity AI into your Google search experience. Get concise, AI-generated answers and summaries displayed directly above your regular search results, saving you time and effort.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-green)](https://chrome.google.com/webstore)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+Enhance your Google searches with AI-powered answers from Perplexity, seamlessly integrated into your browser.
+
+[Installation](#installation) • [Usage](#usage) • [Contributing](#contributing) • [License](#license)
 
 ![Perplexity AI for Google Search](images/preview.png)
 
-## Installation
+</div>
 
-1. **Clone the repository:**
+## ✨ Features
+
+-   🤖 AI-powered answers directly in Google search results
+-   ⚡️ Fast and seamless integration
+-   📝 Detailed summaries and explanations
+-   🔗 Source citations and references
+-   🎨 Clean, modern interface
+
+## 🚀 Installation
+
+1. Clone this repository:
     ```bash
-    git clone [repository URL]
+    git clone https://github.com/yourusername/perplexity-google-extension.git
     ```
-2. **Open Chrome Extensions:** Go to `chrome://extensions/` in your browser.
-3. **Enable Developer Mode:** Toggle the "Developer mode" switch in the top right corner.
-4. **Load unpacked:** Click the "Load unpacked" button and select the extension's repository folder.
+2. Navigate to `chrome://extensions/` in Chrome
+3. Enable "Developer mode" in the top right
+4. Click "Load unpacked" and select the extension folder
 
-## Usage
+## 💡 Usage
 
-1. **Search on Google:** Simply perform a search on Google as you normally would.
-2. **View Perplexity Results:** If relevant, Perplexity AI results will automatically appear at the top of the search results page, providing you with quick, informative answers.
+1. Search anything on Google as usual
+2. Watch as Perplexity AI results appear automatically
+3. Get instant, AI-powered answers to your queries
 
-## Contributing
+## 🤝 Contributing
 
-We welcome contributions to make this extension even better!
+Contributions are what make the open source community amazing! Any contributions you make are **greatly appreciated**.
 
-1. **Fork the repository:** Click the "Fork" button on the top right of this repository page.
-2. **Make your changes:** Implement your desired features or bug fixes.
-3. **Create a pull request:** Submit a pull request with a clear description of your changes.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License. See the `LICENSE` file for complete details.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-### Contributors
+## 👥 Contributors
 
-[Your Name/GitHub Username] - _Primary Developer_
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/steveruu">
+        <img src="https://github.com/steveruu.png" width="100px;" alt="steveruu"/><br />
+        <sub><b>steveruu</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-We appreciate contributions from the community!
+## 🙏 Acknowledgements
 
-## Acknowledgements
+-   [Perplexity AI](https://www.perplexity.ai/) for their incredible AI technology
+-   [Google](https://www.google.com/) for their search platform
+-   The amazing open source community
 
--   **[Perplexity AI](https://www.perplexity.ai/)**: For providing the powerful AI search engine that powers this extension.
--   **[Google](https://www.google.com/)**: For the ubiquitous search engine that we enhance.
--   **[Google Chrome](https://www.google.com/chrome/)**: For the browser platform that makes this extension possible.
+---
+
+<div align="center">
+Made with ❤️ by <a href="https://github.com/minjiyalabs">minjiyalabs</a>
+</div>
