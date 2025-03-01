@@ -1,7 +1,5 @@
 # 🔍 Perplexity AI for Google Search
 
-# Perplexity AI for Google Search
-
 ![Perplexity AI for Google Search](images/preview.png)
 
 Enhance your Google searches with AI-powered answers from Perplexity, seamlessly integrated into your browser.  
@@ -11,6 +9,7 @@ Enhance your Google searches with AI-powered answers from Perplexity, seamlessly
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 ## ✨ Features
 
 -   🤖 AI-powered answers directly in Google search results
