@@ -1,19 +1,16 @@
 # 🔍 Perplexity AI for Google Search
 
-<div align="center">
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-green)](https://chrome.google.com/webstore)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-
-Enhance your Google searches with AI-powered answers from Perplexity, seamlessly integrated into your browser.
-
-[Installation](#installation) • [Usage](#usage) • [Contributing](#contributing) • [License](#license)
+# Perplexity AI for Google Search
 
 ![Perplexity AI for Google Search](images/preview.png)
 
-</div>
+Enhance your Google searches with AI-powered answers from Perplexity, seamlessly integrated into your browser.  
+**No API key needed!**
 
+[Installation](#installation) • [Usage](#usage) • [Contributing](#contributing) • [License](#license)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 ## ✨ Features
 
 -   🤖 AI-powered answers directly in Google search results
