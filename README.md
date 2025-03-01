@@ -26,7 +26,7 @@ Enhance your Google searches with AI-powered answers from Perplexity, seamlessly
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/yourusername/perplexity-google-extension.git
+    git clone https://github.com/minjiyalabs/chrome-perplexity-ai.git
     ```
 2. Navigate to `chrome://extensions/` in Chrome
 3. Enable "Developer mode" in the top right
