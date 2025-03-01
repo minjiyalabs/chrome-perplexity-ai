@@ -68,13 +68,54 @@
     color: var(--perplexity-text);
 }
 
+.perplexity-answer-container {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.perplexity-response-header {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    background-color: var(--perplexity-card);
+    z-index: 1;
+}
+
+.perplexity-avatar {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--perplexity-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    box-shadow: 0 2px 8px rgba(0, 204, 187, 0.3);
+}
+
+.perplexity-avatar svg {
+    width: 100%;
+    height: 100%;
+    stroke: #000000;
+}
+
+.perplexity-response-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--perplexity-text);
+    letter-spacing: -0.02em;
+}
+
 .perplexity-answer {
     background-color: var(--perplexity-card);
-    padding: 20px;
+    padding: 24px 20px 20px;
     border-radius: 12px;
-    margin-bottom: 20px;
     border: 1px solid var(--perplexity-border);
-
     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
         "Helvetica Neue", sans-serif !important;
@@ -424,6 +465,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .perplexity-expand-button button:hover {
@@ -437,4 +479,21 @@
 
 .perplexity-expand-button button.expanded svg {
     transform: rotate(180deg);
+}
+
+.perplexity-answer-content {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif !important;
+}
+
+.perplexity-answer-content p {
+    margin: 0 0 16px 0;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif !important;
+}
+
+.perplexity-answer-content p:last-child {
+    margin-bottom: 0;
 }

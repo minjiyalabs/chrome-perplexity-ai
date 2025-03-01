@@ -34,7 +34,7 @@ function insertPlaceholder() {
         <div class="perplexity-logo">
         <svg viewBox="0 0 101 116" stroke="#ffffff" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" d="M86.4325 6.53418L50.4634 36.9696H86.4325V6.53418Z" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M50.4625 36.9696L17.2603 6.53418V36.9696H50.4625Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M50.4634 1L50.4634 114.441" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M83.6656 70.172L50.4634 36.9697V79.3026L83.6656 108.908V70.172Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M17.2603 70.172L50.4625 36.9697V78.4497L17.2603 108.908V70.172Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M3.42627 36.9697V81.2394H17.2605V70.172L50.4628 36.9697H3.42627Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M50.4634 36.9697L83.6656 70.172V81.2394H97.4999V36.9697L50.4634 36.9697Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path></svg>
         </div>
-        <span>Perplexity AI results</span>
+        <span>Perplexity</span>
       </div>
       <div class="perplexity-content">
         <div class="perplexity-loading">Loading results from Perplexity...</div>
@@ -97,8 +97,16 @@ function displayResults(results) {
     const content = container.querySelector(".perplexity-content");
     content.innerHTML = `
       <div class="perplexity-answer-wrapper">
-        <div class="perplexity-answer">
-          ${tempDiv.innerHTML}
+        <div class="perplexity-answer-container">
+          <div class="perplexity-response-header">
+            <div class="perplexity-avatar">
+              <svg viewBox="0 0 101 116" stroke="#ffffff" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" d="M86.4325 6.53418L50.4634 36.9696H86.4325V6.53418Z" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M50.4625 36.9696L17.2603 6.53418V36.9696H50.4625Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M50.4634 1L50.4634 114.441" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M83.6656 70.172L50.4634 36.9697V79.3026L83.6656 108.908V70.172Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M17.2603 70.172L50.4625 36.9697V78.4497L17.2603 108.908V70.172Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M3.42627 36.9697V81.2394H17.2605V70.172L50.4628 36.9697H3.42627Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path><path d="M50.4634 36.9697L83.6656 70.172V81.2394H97.4999V36.9697L50.4634 36.9697Z" class="stroke-textMain dark:stroke-textMainDark group-hover:stroke-superDuper transition-colors duration-300" stroke-width="5.53371" stroke-miterlimit="10"></path></svg>
+            </div>
+            <span class="perplexity-response-label">Response</span>
+          </div>
+          <div class="perplexity-answer">
+            ${tempDiv.innerHTML}
+          </div>
         </div>
       </div>
       <div class="perplexity-expand-button" style="display: none;">
